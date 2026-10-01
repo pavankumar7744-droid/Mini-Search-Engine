@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Search Engine</title>
+    <meta name="description" content="A Mini Search Engine with TF-IDF Ranking and Fuzzy Matching">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <div class="header-titles">
+                <h1>Mini Search Engine</h1>
+                <p>Information-Retrieval System</p>
+            </div>
+            <button id="clearSessionBtn" class="danger-btn"><i class="ri-delete-bin-line"></i> Clear Session</button>
+        </header>
+
+        <section class="search-section">
+            <div class="search-box">
+                <i class="ri-search-line search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search relevant information..." autocomplete="off">
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Document Collection</h2>
+                    <label for="fileUpload" class="upload-btn">
+                        <i class="ri-upload-cloud-2-line"></i> Upload
+                        <input type="file" id="fileUpload" multiple accept=".txt,.pdf,.docx,.html">
+                    </label>
+                </div>
+                
+                <div id="uploadProgress" class="progress-bar hidden">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <ul id="fileList" class="file-list">
+                    <!-- Uploaded files will appear here -->
+                    <li class="empty-state">No documents uploaded.</li>
+                </ul>
+            </aside>
+
+            <section class="results-section">
+                <h2>Search Results</h2>
+                <div id="resultsList" class="results-list">
+                    <!-- Search results will appear here -->
+                    <div class="empty-state">Enter a query to start searching.</div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="app-footer">
+            <p><strong>Team 09</strong> | Section 12 &bull; K. Pavan Kumar & P. Harsha Vardhan</p>
+        </footer>
+    </main>
+
+    <!-- Document Viewer Modal -->
+    <div id="docModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalDocTitle">Document Title</h2>
+                <button id="closeModalBtn" class="close-btn"><i class="ri-close-line"></i></button>
+            </div>
+            <div id="modalDocBody" class="modal-body">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
