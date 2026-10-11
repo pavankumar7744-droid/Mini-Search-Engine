@@ -1,5 +1,5 @@
 {
-  "name": "mini-search-engine",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
-    "html-to-text": "^10.0.1",
-    "mammoth": "^1.12.3",
+    "lowdb": "^1.0.0",
     "multer": "^2.4.0",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^1.1.1"
   }
 }
